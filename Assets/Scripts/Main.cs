@@ -5,29 +5,27 @@ namespace Testo
 {
     public class Main : MonoBehaviour
     {
-        [SerializeField] Camera _camera;
         [SerializeField] LevelObjectView _playerView = null;
-        [SerializeField] int _animationSpeed = 10;
+        [SerializeField] SpriteAnimatorConfig _playerConfig;
+        [SerializeField] Transform _cannon = null;
 
         SpriteAnimator _playerAnimator;
-
-        float _speed = 5f;
-        float _jumpForce = 15f;
-        Cow _cow;
+        PlayerMove _playerController;
+        AimingMuzzle _muzzle;
 
         void Awake()
         {
-            SpriteAnimatorConfig playerConfig = Resources.Load<SpriteAnimatorConfig>("SpritePlayerCfg");
-            _playerAnimator = new SpriteAnimator(playerConfig);
-
-            var moveTransform = new MoveTransform(_playerView, _speed, _jumpForce, _playerAnimator, _animationSpeed);
-            _cow = new Cow(moveTransform);
+            _playerConfig = Resources.Load<SpriteAnimatorConfig>("SpritePlayerCfg");
+            _playerAnimator = new SpriteAnimator(_playerConfig);
+            _playerController = new PlayerMove(_playerView, _playerAnimator);
+            _muzzle = new AimingMuzzle(_cannon, _playerView._transform);
         }
 
         void Update()
         {
             _playerAnimator.Update();
-            _cow.Move(Input.GetAxis("Horizontal"), 0, Input.GetButtonDown("Jump"));
+            _playerController.Update();
+            _muzzle.Update();
         }
     }
 }
