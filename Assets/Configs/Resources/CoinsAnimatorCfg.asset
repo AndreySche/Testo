@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868b07edec16615478cc00885a09fbbb, type: 3}
+  m_Name: CoinsAnimatorCfg
+  m_EditorClassIdentifier: 
+  Sequences:
+  - Track: 1
+    Sprites:
+    - {fileID: -6674516647602236717, guid: c3f15a6d7813f3340ad54cda786e9d8e, type: 3}
+    - {fileID: -5449181854711225165, guid: c3f15a6d7813f3340ad54cda786e9d8e, type: 3}
+    - {fileID: -8028259449025545754, guid: c3f15a6d7813f3340ad54cda786e9d8e, type: 3}
+    - {fileID: -144086000976620662, guid: c3f15a6d7813f3340ad54cda786e9d8e, type: 3}
+    - {fileID: 7042499467196278917, guid: c3f15a6d7813f3340ad54cda786e9d8e, type: 3}
+    - {fileID: -7617028192788447493, guid: c3f15a6d7813f3340ad54cda786e9d8e, type: 3}
+    - {fileID: 2476220984407424600, guid: c3f15a6d7813f3340ad54cda786e9d8e, type: 3}
+    - {fileID: -7006490702439159189, guid: c3f15a6d7813f3340ad54cda786e9d8e, type: 3}
+    - {fileID: 8060592295205006471, guid: c3f15a6d7813f3340ad54cda786e9d8e, type: 3}
+    - {fileID: 7636514153677849606, guid: c3f15a6d7813f3340ad54cda786e9d8e, type: 3}

@@ -11,10 +11,10 @@ namespace Testo
         public float JumpForce { get; protected set; }
 
         LevelObjectView _playerView;
-        SpriteAnimator _spriteAnimator;
+        SpriteAnimatorController _spriteAnimator;
         float _animationSpeed;
 
-        public MoveTransform(LevelObjectView playerView, float speed, float jumpForce, SpriteAnimator spriteAnimator, float animationSpeed)
+        public MoveTransform(LevelObjectView playerView, float speed, float jumpForce, SpriteAnimatorController spriteAnimator, float animationSpeed)
         {
             _playerView = playerView;
             _rigibBody2D = playerView._rigidbody2D;

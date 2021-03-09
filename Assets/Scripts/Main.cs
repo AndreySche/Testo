@@ -5,27 +5,39 @@ namespace Testo
 {
     public class Main : MonoBehaviour
     {
-        [SerializeField] LevelObjectView _playerView = null;
-        [SerializeField] SpriteAnimatorConfig _playerConfig;
-        [SerializeField] Transform _cannon = null;
+        [SerializeField] private LevelObjectView _playerView = null;
+        [SerializeField] private List<LevelObjectView> _coins = null;
+        [SerializeField] private CannonView _cannon;    
 
-        SpriteAnimator _playerAnimator;
-        PlayerMove _playerController;
-        AimingMuzzle _muzzle;
+        private CannonAimController _cannonAim;
+        private SpriteAnimatorController _playerAnimator;
+        private SpriteAnimatorController _coinsAnimator;
+        private PlayerController _playerController;
+        private CoinsManager _coinsManager;
 
         void Awake()
         {
-            _playerConfig = Resources.Load<SpriteAnimatorConfig>("SpritePlayerCfg");
-            _playerAnimator = new SpriteAnimator(_playerConfig);
-            _playerController = new PlayerMove(_playerView, _playerAnimator);
-            _muzzle = new AimingMuzzle(_cannon, _playerView._transform);
+            SpriteAnimatorConfig playerConfig = Resources.Load<SpriteAnimatorConfig>("PlayerAnimatorCfg");
+            _playerAnimator = new SpriteAnimatorController(playerConfig);
+            _playerController = new PlayerController(_playerView, _playerAnimator);
+
+            SpriteAnimatorConfig coinsConfig = Resources.Load<SpriteAnimatorConfig>("CoinsAnimatorCfg");
+            _coinsAnimator = new SpriteAnimatorController(coinsConfig);
+
+            _cannonAim = new CannonAimController(_cannon._muzzleTransform, _playerView.transform);
+            _coinsManager = new CoinsManager(_playerView, _coins, _coinsAnimator);
         }
 
         void Update()
         {
             _playerAnimator.Update();
-            _playerController.Update();
-            _muzzle.Update();
+            _cannonAim.Update();
+            _coinsAnimator.Update();
+        }
+
+        private void FixedUpdate()
+        {
+            _playerController.FixedUpdate();
         }
     }
 }

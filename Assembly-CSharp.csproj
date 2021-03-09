@@ -63,6 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AnimState.cs" />
+    <Compile Include="Assets\Scripts\CannonAimController.cs" />
+    <Compile Include="Assets\Scripts\CannonView.cs" />
+    <Compile Include="Assets\Scripts\CoinsManager.cs" />
+    <Compile Include="Assets\Scripts\ContactsPoller.cs" />
     <Compile Include="Assets\Scripts\Cow.cs" />
     <Compile Include="Assets\Scripts\IMove.cs" />
     <Compile Include="Assets\Scripts\LevelObjectView.cs" />
@@ -70,10 +74,10 @@
     <Compile Include="Assets\Scripts\MoveTransform.cs" />
     <Compile Include="Assets\Scripts\ParalaxManager.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\SpriteAnimator.cs" />
     <Compile Include="Assets\Scripts\SpriteAnimatorConfig.cs" />
+    <Compile Include="Assets\Scripts\SpriteAnimatorController.cs" />
     <Compile Include="Assets\Scripts\TwoLesson\AimingMuzzle.cs" />
-    <Compile Include="Assets\Scripts\TwoLesson\PlayerMove.cs" />
+    <Compile Include="Assets\Scripts\TwoLesson\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Utils.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Editor/2019.4.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

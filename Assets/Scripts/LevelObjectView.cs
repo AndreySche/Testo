@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
+using System;
 
 namespace Testo
 {
@@ -13,5 +9,14 @@ namespace Testo
         public SpriteRenderer _spriteRenderer;
         public Rigidbody2D _rigidbody2D;
         public Collider2D _collider2D;
+
+
+        public Action<LevelObjectView> OnLevelObjectContact { get; set; }
+
+        void OnTriggerEnter2D(Collider2D collider)
+        {
+            var levelObject = collider.gameObject.GetComponent<LevelObjectView>();
+            OnLevelObjectContact?.Invoke(levelObject);
+        }
     }
 }
