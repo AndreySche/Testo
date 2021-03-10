@@ -10,7 +10,6 @@ namespace Testo
         public Rigidbody2D _rigidbody2D;
         public Collider2D _collider2D;
 
-
         public Action<LevelObjectView> OnLevelObjectContact { get; set; }
 
         void OnTriggerEnter2D(Collider2D collider)
